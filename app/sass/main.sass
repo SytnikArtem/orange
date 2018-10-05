@@ -508,6 +508,7 @@ body
 		font-weight: 900
 		margin: 80px 120px
 		position: relative
+		width: 100%
 	&-title
 		text-align: left
 	&-left
@@ -648,14 +649,18 @@ body
 				bottom: 0
 				right: 0
 				background: rgba(16, 14, 14, 0.6)
+				opacity: 0
+				transition: opacity .5s ease
 		&-btn
 			text-transform: none
 			position: absolute
-			top: calc(50% - 25px)
+			top: calc(50% + 60px)
+			opacity: 0
 			left: calc(50% - 75px)
 			//transform: translate(-50%, -50%)
 			height: 50px
 			line-height: 50px
+			transition: all .5s ease
 		&-img
 			width: 100%
 		&-play
@@ -699,6 +704,12 @@ body
 			right: 0
 			top: 60px
 			z-index: 1
+.seventh-item-block:hover
+	&:before
+		opacity: 1
+	.seventh-item-btn
+		opacity: 1
+		top: calc(50% - 25px)
 .seventh-slider .slick-next:before
 	background: url(../img/arrow-next2.svg) no-repeat center
 	background-size: 25px 16px
@@ -845,8 +856,7 @@ body
 	width: 0
 	height: 100vh
 	max-height: 100%
-	background: #f06000 url(../img/6.png) no-repeat left -170px center
-	background-size: 350px
+	background: #f06000
 	position: fixed
 	top: 0
 	left: 0
@@ -854,6 +864,17 @@ body
 	overflow: hidden
 	transition: width .5s ease
 	//display: none
+	&-img
+		position: absolute
+		width: 600px
+		top: 50%
+		transform: translateY(-50%)
+		left: -600px
+		opacity: 0
+		transition: all .5s ease
+		&.active
+			opacity: 1
+			left: -300px
 	&.active
 		width: 100%
 	&-flex
@@ -977,4 +998,17 @@ body
 	100%
 		opacity: 1
 		transform: translate3d(0, 0, 0)
+.number-slider-item
+	font-size: 68px
+	font-weight: 800
+	color: #ffffff
+	width: 75px
+_:-ms-input-placeholder, :root .slider-img
+	animation: none!important
+_:-ms-input-placeholder, :root .slider-row-overlay
+	animation: none!important
+_:-ms-input-placeholder, :root .seventh-item-block
+	animation: none!important
+_:-ms-input-placeholder, :root .video-slide
+	 animation: none!important
 @import "media" // Всегда в конце

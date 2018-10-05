@@ -2,7 +2,17 @@ $(document).ready(function() {
     var numberSlide;
     $('.fourth-slider').slick({
       infinite: false,
-      dots: false
+      dots: false,
+      asNavFor: '.number-slider'
+    });
+    $('.number-slider').slick({
+      vertical: true,
+      slidesToScroll: 1,
+      slidesToShow: 1,
+      infinite: false,
+      dots: false,
+      arrows: false,
+      asNavFor: '.fourth-slider'
     });
   $('.fourth-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
     numberSlide = 1;
@@ -37,6 +47,7 @@ $(document).ready(function() {
     $('.menu').addClass('active');
     setTimeout(function(){
       $('.menu-list').addClass('active');
+      $('.menu-img').addClass('active');
     }, 500)
   });
   $('.menu-close').click(function() {
@@ -44,6 +55,7 @@ $(document).ready(function() {
       $('.menu').removeClass('active');
     }, 500)
     $('.menu-list').removeClass('active');
+    $('.menu-img').removeClass('active');
   });
   $('.third-close').click(function() {
     $('.popup').removeClass('active');
@@ -52,6 +64,7 @@ $(document).ready(function() {
   });
   $('.third-item').click(function() {
     let number = $(this).data('number');
+    console.log(number);
     $('.third-popup').eq(number).addClass('active');
     $('.third-popup').eq(number).find('.third-popup-content').removeClass('close');
     $('.third-popup').eq(number).find('.third-popup-content').addClass('active');
