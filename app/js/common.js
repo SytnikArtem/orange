@@ -126,6 +126,12 @@ $(document).ready(function() {
   // myText.show();
     $(".bgvideo").click(function() {
       var dataYoutube = $(this).parents('.video').attr('data-youtube');
-      jQuery(this).parents('.video').html('<iframe width="100%" height="100%" src="https://www.youtube.com/embed/' + dataYoutube + '?autoplay=1" frameborder="0" allowfullscreen></iframe>');
+      $(this).parents('.video').html('<iframe width="100%" height="100%" src="https://www.youtube.com/embed/' + dataYoutube + '?autoplay=1" frameborder="0" allowfullscreen></iframe>');
     });
+    $('[data-fancybox="gallery"]').fancybox({
+    infobar: false,
+    buttons: [
+      "close"
+    ]
+  });
 });
