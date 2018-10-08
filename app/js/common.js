@@ -5,6 +5,11 @@ $(document).ready(function() {
       dots: false,
       asNavFor: '.number-slider'
     });
+    $('.mob-slider').slick({
+      infinite: false,
+      dots: true,
+      adaptiveHeight: true
+    });
     $('.number-slider').slick({
       vertical: true,
       slidesToScroll: 1,
@@ -13,6 +18,39 @@ $(document).ready(function() {
       dots: false,
       arrows: false,
       asNavFor: '.fourth-slider'
+    });
+    $('.popup-form-slider').slick({
+      vertical: true,
+      slidesToScroll: 1,
+      slidesToShow: 1,
+      infinite: false,
+      dots: false,
+      arrows: false,
+      // asNavFor: '.fourth-slider'
+    });
+    var index = 0;
+    $('.popup-form-btn').click(function(){
+      $('.popup-form-slider').slick('slickNext');
+
+      index = index + 1;
+      $('.popup-left-step').eq(index).addClass('active').siblings().removeClass('active');
+      $('.animation-hide-text').removeClass('active');
+      // $('.animation-hide-text').removeClass('active2');
+      $('.animation-hide-text').addClass('active2');
+      let height = $('.popup-left-step.active').height();
+      $('.popup-left-block').height(height);
+      let height2 = $('.second-step.active').height();
+      $('.sixth-main').height(height2 + 50);
+      if(index == 1) {
+        $('.popup-form-left').find('.animation-hide-text').text('Какова ваша цель');
+      }
+      if(index == 2) {
+        $('.popup-form-left').find('.animation-hide-text').text('Вы');
+      }
+      if(index == 3) {
+        $('.popup-form-left').find('.animation-hide-text').text('Внесите контактные данные для резервирования скидки');
+        $('.popup-form-left').find('.animation-hide-text').addClass('small');
+      }
     });
   $('.fourth-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
     numberSlide = 1;
@@ -28,20 +66,25 @@ $(document).ready(function() {
       let top = $(window).scrollTop();
       $('body,html').animate({scrollTop: top + 1});
     }, 200)
-
   });
   $('.seventh-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
     wowSlide.init();
     setTimeout(function(){
-
       let top = $(window).scrollTop();
       $('body,html').animate({scrollTop: top + 1});
-    }, 200)
-
+    }, 200);
   });
   $('.seventh-slider').slick({
     infinite: true,
-    dots: false
+    dots: false,
+    responsive: [
+      {
+        breakpoint: 480,
+        settings: {
+          arrows: false
+        }
+      }
+    ]
   });
   $('.header-menu').click(function() {
     $('.menu').addClass('active');
@@ -64,7 +107,6 @@ $(document).ready(function() {
   });
   $('.third-item').click(function() {
     let number = $(this).data('number');
-    console.log(number);
     $('.third-popup').eq(number).addClass('active');
     $('.third-popup').eq(number).find('.third-popup-content').removeClass('close');
     $('.third-popup').eq(number).find('.third-popup-content').addClass('active');
@@ -134,4 +176,21 @@ $(document).ready(function() {
       "close"
     ]
   });
+    $('.popup-left-text').click(function(){
+      $(this).toggleClass('active');
+      if($(this).hasClass('radio')) {
+
+        $(this).closest('.popup-left-label').siblings().find('.popup-left-text').removeClass('active');
+        $(this).closest('.popup-left-label').find('.popup-left-text').addClass('active');
+      }
+    });
+    $('.sixth-btn').click(function(){
+      $('.first-step').removeClass('active');
+      $('.second-step').addClass('active');
+      $('.animation-hide-text').addClass('active');
+      let height = $('.popup-left-step.active').height();
+      $('.popup-left-block').height(height);
+      let height2 = $('.second-step.active').height();
+      $('.sixth-main').height(height2 + 20);
+    });
 });

@@ -11,21 +11,28 @@
 		box-sizing: border-box
 
 *::-webkit-input-placeholder
-	color: #666
+	color: #fff
 	opacity: 1
 
 *:-moz-placeholder
-	color: #666
+	color: #fff
 	opacity: 1
 
 *::-moz-placeholder
-	color: #666
+	color: #fff
 	opacity: 1
 
 *:-ms-input-placeholder
-	color: #666
+	color: #fff
 	opacity: 1
-
+.third-input::-webkit-input-placeholder
+	color: rgb(33, 37, 41)
+.third-input:-moz-placeholder
+	color: rgb(33, 37, 41)
+.third-input::-moz-placeholder
+	color: rgb(33, 37, 41)
+.third-input:-ms-input-placeholder
+	color: rgb(33, 37, 41)
 body input:focus:required:invalid,
 body textarea:focus:required:invalid
 	color: #666
@@ -125,7 +132,7 @@ body
 		font-size: 68px
 		line-height: 56px
 		text-transform: uppercase
-		font-weight: 700
+		font-weight: 800
 		padding-top: 10px
 	&-description
 		font-size: 16px
@@ -203,10 +210,11 @@ body
 		margin: 0 40px 0 25px
 		cursor: pointer
 	&-phone
+		text-align: center
 		&-link
 			color: #ffffff
 			font-size: 36px
-			margin-left: 60px
+			//margin-left: 60px
 			&:hover
 				color: #ffffff
 				text-decoration: none
@@ -216,7 +224,6 @@ body
 			color: #ffffff
 			font-size: 18px
 .second
-	height: 500px
 	padding: 95px 0 0
 	&-row
 		position: relative
@@ -235,7 +242,7 @@ body
 	&-video
 		box-shadow: 0 25px 65px rgba(0, 0, 0, 0.18)
 		width: 100%
-		height: 100%
+		height: 300px
 		//background: #000000
 		overflow: hidden
 		position: relative
@@ -269,6 +276,214 @@ body
 	&.active
 		opacity: 1
 		pointer-events: auto
+	&-form
+		display: flex
+		align-items: flex-start
+		justify-content: space-between
+		&-input
+			width: 300px
+			background: rgba(255, 255, 255, 0.1)
+			border-radius: 5px
+			color: #ffffff
+			font-size: 14px
+			text-transform: uppercase
+			font-weight: 800
+			height: 50px
+			padding: 0 20px
+			border: none
+			outline: none
+		&-slider
+			width: 140px
+		&-slide
+			font-size: 90px
+			color: #ffa902
+			font-weight: 800
+			text-align: right
+		&-left
+			padding-left: 40px
+		&-title
+			font-size: 68px
+			line-height: 58px
+			color: #ffffff
+			font-weight: 800
+			.small
+				font-size: 50px
+				line-height: 50px
+		&-right
+			padding: 0 40px 0 30px
+			display: flex
+			flex-direction: column
+			height: 100%
+			justify-content: space-between
+		&-sale
+			font-size: 16px
+			color: #ffa902
+			text-transform: uppercase
+			font-weight: 800
+			text-align: right
+			&_white
+				color: #ffffff
+		&-value
+			font-size: 90px
+			color: #ffa902
+			font-weight: 800
+			display: flex
+			align-items: flex-start
+			justify-content: flex-end
+			position: relative
+			&_white
+				color: #ffffff
+		&-percent
+			font-size: 50px
+			margin-top: 10px
+		&-bottom
+			display: flex
+			align-items: center
+			justify-content: flex-end
+		&-down
+			color: #f06000
+			font-size: 15px
+			margin-right: 20px
+			font-weight: 800
+			text-transform: uppercase
+			text-align: right
+			line-height: 18px
+			letter-spacing: -1px
+		&-btn
+			width: 60px
+			height: 60px
+			border-radius: 50%
+			background: #f06000
+			flex-shrink: 0
+			border: none
+			outline: none
+			cursor: pointer
+			padding-top: 5px
+			&:hover
+				.popup-form-svg
+					animation: anim-francisco2 0.3s forwards
+					path
+						fill: rgba(1, 1, 1, 0.6)
+			&:focus
+				outline: none
+	&-left
+		&-row
+			display: flex
+			align-items: center
+			justify-content: space-between
+			margin-top: 20px
+		&-label
+			width: 300px
+			position: relative
+			height: 50px
+			border-radius: 5px
+			overflow: hidden
+		&-block
+			margin-top: 35px
+			position: relative
+		&-step
+			position: absolute
+			left: 0
+			top: 0
+			opacity: 0
+			pointer-events: none
+			width: 100%
+			&.active
+				opacity: 1
+				pointer-events: auto
+		&-text
+			padding: 0 20px
+			position: absolute
+			top: 0
+			left: 0
+			background: rgba(255, 255, 255, 0.1)
+			height: 100%
+			line-height: 50px
+			color: #ffffff
+			width: 100%
+			font-size: 14px
+			text-transform: uppercase
+			font-weight: 900
+			animation: textHide2 .5s ease
+			border-radius: 5px
+		&-input
+			opacity: 0
+		&-sel
+			width: 300px
+			height: 50px
+			position: relative
+			&:after
+				position: absolute
+				content: ''
+				width: 0
+				height: 0
+				border: 5px solid transparent
+				border-top: 5px solid #3b3f4d
+				top: 50%
+				right: 20px
+				cursor: pointer
+		&-select
+			width: 100%
+			height: 100%
+			background: rgba(255, 255, 255, 0.1)
+			color: #ffffff
+			text-transform: uppercase
+			font-size: 14px
+			font-weight: 800
+			border: none
+			border-radius: 5px
+			padding: 0 20px
+			outline: none
+			appearance: none
+		&-option
+			background: rgb(53, 39, 39)
+			outline: none
+.step
+	display: flex
+	flex-wrap: wrap
+.first-step
+	opacity: 0
+	pointer-events: none
+	z-index: 2
+	&.active
+		opacity: 1
+		pointer-events: auto
+.second-step
+	position: absolute
+	width: 100%
+	left: 0
+	top: 0
+	padding: 60px 0
+	pointer-events: none
+	opacity: 0
+	&.active
+		opacity: 1
+		pointer-events: auto
+//.second-step.active .animation-hide-text
+//	animation: textHide .5s ease
+.animation-hide-text.active
+	animation: textHide .5s ease
+.animation-hide-text.active2
+	transition: none
+@keyframes textHide
+	from
+		transform: translate3d(0px,101%,0)
+	to
+		transform: translate3d(0px, 0%, 0px)
+@keyframes textHide2
+	from
+		transform: translate3d(0px, 0%, 0px)
+
+	50%
+		transform: translate3d(0px,101%,0)
+	100%
+		transform: translate3d(0px, 0%, 0px)
+
+.popup-left-text.active
+	animation: textHide .5s ease
+	background: #f06000 url(../img/checked.svg) no-repeat left 20px center
+	background-size: 12px 10px
+	padding-left: 55px
 
 .third
 	padding: 90px 0 60px
@@ -300,6 +515,12 @@ body
 			overflow: hidden
 			animation-duration: 0.3s
 			animation-fill-mode: forwards
+			&_big
+				max-width: 1170px
+				left: calc(50% - 585px)
+				padding: 60px 75px
+				border-radius: 18px
+				background: #141212
 			&.active
 				animation-name: anim-open
 			&.close
@@ -998,6 +1219,16 @@ body
 	100%
 		opacity: 1
 		transform: translate3d(0, 0, 0)
+@keyframes anim-francisco2
+	50%
+		opacity: 0
+		transform: translate3d(100%, 0, 0)
+	51%
+		opacity: 0
+		transform: translate3d(-100%, 0, 0)
+	100%
+		opacity: 1
+		transform: translate3d(0, 0, 0)
 .number-slider-item
 	font-size: 68px
 	font-weight: 800
@@ -1012,5 +1243,6 @@ _:-ms-input-placeholder, :root .seventh-item-block
 _:-ms-input-placeholder, :root .video-slide
 	 animation: none!important
 
-
+.mob-slider
+	display: none
 @import "media" // Всегда в конце
