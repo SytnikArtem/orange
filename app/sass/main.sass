@@ -107,7 +107,7 @@ body
 	color: #f06000
 .border
 	position: absolute
-	left: 0
+	left: 15px
 	bottom: 0
 	width: 100%
 	max-width: 1170px
@@ -744,9 +744,10 @@ body
 	&-img
 		width: 100%
 		position: absolute
-		right: 0
+		right: 100px
 		top: 75px
 		z-index: 2
+		max-width: 420px
 	&-svg
 		position: absolute
 		top: 0
@@ -1112,6 +1113,8 @@ body
 		justify-content: space-between
 		align-items: center
 		overflow: hidden
+		position: relative
+		z-index: 3
 		&.active
 			.menu-item
 				transform: translateY(0)
@@ -1243,6 +1246,6 @@ _:-ms-input-placeholder, :root .seventh-item-block
 _:-ms-input-placeholder, :root .video-slide
 	 animation: none!important
 
-.mob-slider
+.mob-slider, .menu-text
 	display: none
 @import "media" // Всегда в конце

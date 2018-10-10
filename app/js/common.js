@@ -40,7 +40,7 @@ $(document).ready(function() {
       let height = $('.popup-left-step.active').height();
       $('.popup-left-block').height(height);
       let height2 = $('.second-step.active').height();
-      $('.sixth-main').height(height2 + 50);
+      $('.sixth-main').height(height2 + 100);
       if(index == 1) {
         $('.popup-form-left').find('.animation-hide-text').text('Какова ваша цель');
       }
@@ -77,11 +77,16 @@ $(document).ready(function() {
   $('.seventh-slider').slick({
     infinite: true,
     dots: false,
+    slidesToShow: 2,
+    slidesToScroll: 2,
     responsive: [
       {
         breakpoint: 480,
         settings: {
-          arrows: false
+          arrows: false,
+          variableWidth: true,
+          slidesToScroll: 1,
+          slidesToShow: 1
         }
       }
     ]
@@ -93,7 +98,7 @@ $(document).ready(function() {
       $('.menu-img').addClass('active');
     }, 500)
   });
-  $('.menu-close').click(function() {
+  $('.menu-close, .menu-item-link').click(function() {
     setTimeout(function(){
       $('.menu').removeClass('active');
     }, 500)

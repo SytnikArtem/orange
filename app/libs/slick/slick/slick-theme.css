@@ -23,7 +23,6 @@
     line-height: 0;
 
     position: absolute;
-    top: 50%;
 
     display: block;
 
@@ -77,10 +76,7 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-.slick-prev
-{
-    left: -25px;
-}
+
 [dir='rtl'] .slick-prev
 {
     right: -25px;
